@@ -1,0 +1,6 @@
+{
+  "name": "Forever Florida Real Estate",
+  "description": "High-converting landing page for a boutique St. Petersburg brokerage.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

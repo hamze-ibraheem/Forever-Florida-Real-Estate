@@ -1,0 +1,984 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Forever Florida Real Estate - Grand Central, St. Pete</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,600;1,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    /* CSS styles here */
+    :root {
+      --teal: #115E59;
+      --teal-light: #134e4a;
+      --sand: #FDFBF7;
+      --sand-dark: #E5E1DA;
+      --cream: #FDF8F1;
+      --coral: #EF7C5F;
+      --coral-hover: #d9684b;
+      --yellow: #FDE68A;
+      --text: #083D3D;
+      --text-light: rgba(8, 61, 61, 0.7);
+      --white: #ffffff;
+      --font-display: 'Playfair Display', serif;
+      --font-body: 'Inter', sans-serif;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: var(--font-body);
+      color: var(--text);
+      line-height: 1.6;
+      background-color: var(--sand);
+    }
+
+    h1, h2, h3, h4 {
+      font-family: var(--font-display);
+      color: var(--teal);
+    }
+
+    a {
+      text-decoration: none;
+      color: var(--teal);
+      transition: color 0.3s;
+    }
+
+    a:hover {
+      color: var(--coral);
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 12px 28px;
+      background-color: var(--coral);
+      color: var(--white);
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      border-radius: 50px;
+      border: none;
+      cursor: pointer;
+      font-family: var(--font-body);
+      transition: background-color 0.3s, transform 0.2s;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    }
+
+    .btn:hover {
+      background-color: var(--coral-hover);
+      color: var(--white);
+      transform: translateY(-2px);
+    }
+
+    .btn-outline {
+      background-color: transparent;
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      color: var(--white);
+      box-shadow: none;
+    }
+
+    .btn-outline:hover {
+      background-color: rgba(255, 255, 255, 0.1);
+      color: var(--white);
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    section {
+      padding: 80px 20px;
+      margin: 20px;
+      border-radius: 24px;
+    }
+    
+    @media (min-width: 1240px) {
+      section {
+        margin: 20px auto;
+        max-width: 1200px;
+        padding: 80px 40px;
+      }
+    }
+
+    /* Navbar */
+    header {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background-color: var(--white);
+      box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+      border-bottom: 1px solid var(--sand-dark);
+      z-index: 1000;
+      transition: all 0.3s ease;
+      height: 70px;
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 100%;
+    }
+
+    .logo {
+      font-family: var(--font-body);
+      font-size: 1.125rem;
+      font-weight: 700;
+      color: var(--teal);
+      letter-spacing: -0.02em;
+    }
+
+    .logo span {
+      font-weight: 300;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 32px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-weight: 500;
+      font-size: 0.875rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      opacity: 0.8;
+      color: var(--teal);
+    }
+
+    .nav-links a:hover {
+      opacity: 1;
+    }
+
+    .mobile-menu-btn {
+      display: none;
+      font-size: 1.5rem;
+      color: var(--teal);
+      cursor: pointer;
+    }
+
+    /* Hero */
+    .hero {
+      margin-top: 90px;
+      padding: 100px 20px;
+      background: linear-gradient(rgba(17, 94, 89, 0.85), rgba(17, 94, 89, 0.85)), url('https://images.unsplash.com/photo-1510627489930-0c1b0fb09e1d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80') center/cover;
+      height: auto;
+      display: flex;
+      align-items: center;
+      text-align: center;
+      color: var(--white);
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -100px;
+      right: -100px;
+      width: 400px;
+      height: 400px;
+      background: rgba(255,255,255,0.05);
+      border-radius: 50%;
+      pointer-events: none;
+    }
+
+    .hero-content {
+      max-width: 800px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 1;
+      animation: fadeIn 1s ease-out;
+    }
+
+    .hero h1 {
+      color: var(--white);
+      font-size: 4rem;
+      margin-bottom: 24px;
+      font-style: italic;
+      line-height: 1.1;
+      font-weight: 700;
+    }
+
+    .hero p {
+      color: #ccfbf1;
+      font-size: 1.125rem;
+      margin-bottom: 32px;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    
+    .hero .btn-outline {
+      border: 1px solid rgba(255,255,255,0.3);
+    }
+    .hero .btn-outline:hover {
+      background-color: rgba(255,255,255,0.1);
+    }
+
+    /* Section Title */
+    .section-title {
+      font-size: 2rem;
+      margin-bottom: 40px;
+      text-align: center;
+      font-weight: 700;
+      font-style: italic;
+    }
+
+    /* Features */
+    .features {
+      background-color: transparent;
+      padding: 0;
+      margin-top: 40px;
+    }
+
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 16px;
+    }
+
+    .feature-card {
+      padding: 30px;
+      background: var(--white);
+      border-radius: 16px;
+      text-align: center;
+      color: var(--white);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      min-height: 200px;
+    }
+    
+    .feature-card:nth-child(1) { background-color: var(--coral); }
+    .feature-card:nth-child(2) { background-color: var(--teal); }
+    .feature-card:nth-child(3) { background-color: var(--white); border: 1px solid var(--sand-dark); color: var(--teal); }
+    .feature-card:nth-child(4) { background-color: var(--teal-light); }
+
+    .feature-icon {
+      font-size: 2rem;
+      margin-bottom: 16px;
+      opacity: 0.9;
+    }
+    
+    .feature-card:nth-child(3) .feature-icon {
+      color: var(--coral);
+    }
+
+    .feature-card h3 {
+      font-size: 1.125rem;
+      font-family: var(--font-display);
+      font-style: italic;
+      margin-bottom: 8px;
+      color: inherit;
+    }
+    
+    .feature-card p {
+      font-size: 0.625rem;
+      text-transform: uppercase;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      opacity: 0.8;
+    }
+
+    /* Services */
+    .services {
+      background-color: var(--white);
+      border: 1px solid var(--sand-dark);
+      padding: 60px 20px;
+      box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 16px;
+    }
+
+    .service-card {
+      background-color: var(--cream);
+      border-radius: 16px;
+      padding: 24px;
+      text-align: left;
+    }
+
+    .service-card h3 {
+      margin-bottom: 8px;
+      font-size: 0.75rem;
+      font-family: var(--font-body);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      font-weight: 700;
+      color: var(--coral);
+      font-style: normal;
+    }
+    
+    .service-card p {
+      font-size: 0.75rem;
+      color: var(--text-light);
+      line-height: 1.5;
+    }
+
+    /* Testimonials */
+    .testimonials {
+      background-color: var(--cream);
+      border: 1px solid rgba(239, 124, 95, 0.2);
+    }
+
+    .testimonials .section-title {
+      color: var(--teal);
+    }
+
+    .testimonial-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 24px;
+    }
+
+    .testimonial-card {
+      background: var(--white);
+      padding: 30px;
+      border-radius: 16px;
+      position: relative;
+      border: 1px solid var(--sand-dark);
+      box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+    }
+
+    .quote-icon {
+      position: absolute;
+      top: 24px;
+      right: 24px;
+      font-size: 2rem;
+      color: rgba(239, 124, 95, 0.2);
+      font-family: var(--font-display);
+      font-style: italic;
+    }
+
+    .testimonial-card p {
+      font-style: italic;
+      font-size: 0.875rem;
+      color: var(--text);
+      margin-bottom: 20px;
+      line-height: 1.6;
+    }
+
+    .testimonial-author {
+      font-size: 0.625rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--teal);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    
+    .testimonial-author::before {
+      content: '★★★★★';
+      color: var(--coral);
+      font-size: 0.75rem;
+      letter-spacing: 2px;
+    }
+
+    /* Team */
+    .team {
+      background-color: var(--white);
+      border: 1px solid var(--sand-dark);
+      box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+    }
+    
+    .team-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+      gap: 24px;
+      margin-bottom: 40px;
+    }
+
+    .team-card {
+      text-align: center;
+    }
+
+    .team-img-placeholder {
+      width: 64px;
+      height: 64px;
+      background-color: var(--teal);
+      border-radius: 50%;
+      margin: 0 auto 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--white);
+      font-size: 1.25rem;
+    }
+    
+    .team-card:nth-child(2n) .team-img-placeholder { background-color: var(--coral); }
+    .team-card:nth-child(3n) .team-img-placeholder { background-color: var(--yellow); color: var(--teal); }
+    .team-card:nth-child(4n) .team-img-placeholder { background-color: var(--teal-light); }
+    .team-card:nth-child(5n) .team-img-placeholder { background-color: #e5e7eb; color: var(--teal); }
+
+    .team-card h4 {
+      font-size: 0.75rem;
+      font-family: var(--font-body);
+      font-weight: 700;
+      margin-bottom: 4px;
+    }
+
+    .team-card p {
+      color: var(--text-light);
+      font-size: 0.625rem;
+    }
+    
+    .team .btn-outline {
+      border: 1px solid var(--sand-dark);
+      color: var(--teal);
+    }
+    .team .btn-outline:hover {
+      background-color: var(--sand);
+    }
+
+    /* About */
+    .about {
+      background-color: transparent;
+      padding: 40px 20px;
+    }
+
+    .about-content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    .about-content p {
+      margin-bottom: 20px;
+      font-size: 1rem;
+      color: var(--text-light);
+    }
+
+    /* Contact */
+    .contact {
+      background-color: var(--teal);
+      color: var(--white);
+      padding: 60px 40px;
+      margin-bottom: 40px;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .contact .section-title {
+      color: var(--white);
+    }
+    
+    .contact-container {
+      display: grid;
+      grid-template-columns: 1fr;
+      max-width: 600px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 1;
+    }
+
+    .form-group {
+      margin-bottom: 16px;
+    }
+
+    .form-group label {
+      display: block;
+      margin-bottom: 6px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.7);
+      letter-spacing: 0.05em;
+    }
+
+    .form-control {
+      width: 100%;
+      padding: 12px 16px;
+      border: 1px solid rgba(255,255,255,0.2);
+      background: rgba(255,255,255,0.1);
+      border-radius: 8px;
+      font-family: var(--font-body);
+      font-size: 0.875rem;
+      color: var(--white);
+    }
+    
+    .form-control::placeholder {
+      color: rgba(255,255,255,0.5);
+    }
+
+    .form-control:focus {
+      outline: none;
+      border-color: var(--coral);
+    }
+    
+    select.form-control option {
+      color: var(--text);
+      background: var(--white);
+    }
+
+    /* Footer */
+    footer {
+      background-color: var(--white);
+      color: var(--text);
+      padding: 60px 0 20px;
+      border-top: 1px solid var(--sand-dark);
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 40px;
+      margin-bottom: 40px;
+    }
+
+    .footer-col h4 {
+      font-family: var(--font-body);
+      font-size: 0.875rem;
+      font-weight: 700;
+      margin-bottom: 16px;
+      color: var(--teal);
+    }
+
+    .footer-col p, .footer-col li {
+      color: var(--text-light);
+      font-size: 0.875rem;
+      margin-bottom: 8px;
+    }
+
+    .footer-col a {
+      color: var(--text-light);
+    }
+
+    .footer-col a:hover {
+      color: var(--coral);
+    }
+
+    .social-icons {
+      display: flex;
+      gap: 12px;
+      margin-top: 16px;
+    }
+
+    .social-icons a {
+      width: 32px;
+      height: 32px;
+      background-color: var(--sand-dark);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      color: var(--teal);
+      font-size: 0.875rem;
+      transition: all 0.2s;
+    }
+
+    .social-icons a:hover {
+      background-color: var(--coral);
+      color: var(--white);
+    }
+
+    .copyright {
+      text-align: center;
+      padding-top: 20px;
+      border-top: 1px solid var(--sand-dark);
+      color: var(--text-light);
+      font-size: 0.75rem;
+    }
+
+    .google-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: var(--sand);
+      border: 1px solid var(--sand-dark);
+      color: var(--text);
+      padding: 6px 12px;
+      border-radius: 20px;
+      font-weight: 600;
+      font-size: 0.75rem;
+      margin-top: 12px;
+    }
+
+    .google-badge i {
+      color: #fbbc05;
+    }
+
+    /* Animations */
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .fade-in-section {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+      will-change: opacity, visibility;
+    }
+
+    .fade-in-section.is-visible {
+      opacity: 1;
+      transform: none;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        width: 100%;
+        background: var(--white);
+        flex-direction: column;
+        padding: 20px;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        border-bottom: 1px solid var(--sand-dark);
+      }
+      
+      .nav-links.active {
+        display: flex;
+      }
+      
+      .mobile-menu-btn {
+        display: block;
+      }
+      
+      .hero h1 {
+        font-size: 2.5rem;
+      }
+      
+      .section-title {
+        font-size: 1.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header Section -->
+  <header>
+    <div class="container navbar">
+      <div class="logo">Forever Florida <span>Real Estate</span></div>
+      <div class="mobile-menu-btn" id="mobile-menu-btn">
+        <i class="fas fa-bars"></i>
+      </div>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#why-us">Why Us</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#testimonials">Reviews</a></li>
+        <li><a href="#team">Our Team</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact" class="btn" style="padding: 8px 20px;">Contact Us</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero" id="home">
+    <div class="container">
+      <div class="hero-content">
+        <h1>Your Neighbors. Your Agents. Your Forever Home.</h1>
+        <p>St. Petersburg’s most trusted boutique brokerage, rooted right here in Grand Central. We treat you like family because to us, you are.</p>
+        <a href="#contact" class="btn">Find Your Forever Home</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why Choose Us -->
+  <section class="features fade-in-section" id="why-us">
+    <div class="container">
+      <h2 class="section-title">Why Choose Forever Florida</h2>
+      <div class="features-grid">
+        <div class="feature-card">
+          <i class="fas fa-map-marked-alt feature-icon"></i>
+          <h3>Local Experts</h3>
+          <p>Unmatched experience. We know St. Pete neighborhoods inside and out.</p>
+        </div>
+        <div class="feature-card">
+          <i class="fas fa-handshake feature-icon"></i>
+          <h3>Personalized Service</h3>
+          <p>A simple, easy process. We never drop the ball and are always available for you.</p>
+        </div>
+        <div class="feature-card">
+          <i class="fas fa-chart-line feature-icon"></i>
+          <h3>Proven Results</h3>
+          <p>We sell your house exactly when needed, at a price that perfectly aligns with your goals.</p>
+        </div>
+        <div class="feature-card">
+          <i class="fas fa-tree feature-icon"></i>
+          <h3>Community Rooted</h3>
+          <p>Proudly supporting local art and hosting events right here in the Grand Central district.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services -->
+  <section class="services fade-in-section" id="services">
+    <div class="container">
+      <h2 class="section-title">Our Real Estate Services</h2>
+      <div class="services-grid">
+        <div class="service-card">
+          <h3>Buying a Home</h3>
+          <p>Finding the right home can be stressful. We make your life a lot more stress-free, handling every detail from start to finish.</p>
+        </div>
+        <div class="service-card">
+          <h3>Selling a Home</h3>
+          <p>We provide accurate market insights to prepare, list, and sell your property quickly and efficiently.</p>
+        </div>
+        <div class="service-card">
+          <h3>First-Time Buyers</h3>
+          <p>Navigating your first purchase? We guide you with patience, ensuring you are comfortable every step of the way.</p>
+        </div>
+        <div class="service-card">
+          <h3>Relocating to St. Pete</h3>
+          <p>New to town? We'll introduce you to the unique culture, art, and vibrant streets of St. Petersburg.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section class="testimonials fade-in-section" id="testimonials">
+    <div class="container">
+      <h2 class="section-title">What Our Clients Say</h2>
+      <div class="testimonial-grid">
+        <div class="testimonial-card">
+          <i class="fas fa-quote-right quote-icon"></i>
+          <p>"The team never dropped a ball and was always available to promptly answer any questions. It made my life a lot more stress-free."</p>
+          <div class="testimonial-author">- Sarah M.</div>
+        </div>
+        <div class="testimonial-card">
+          <i class="fas fa-quote-right quote-icon"></i>
+          <p>"Unmatched experience. They know the neighborhoods in and out, and the whole process was simple and easy to navigate."</p>
+          <div class="testimonial-author">- David L.</div>
+        </div>
+        <div class="testimonial-card">
+          <i class="fas fa-quote-right quote-icon"></i>
+          <p>"I have bought and sold with Delia for 20+ years, multiple properties including commercial. Her expertise is simply unrivaled."</p>
+          <div class="testimonial-author">- Robert T.</div>
+        </div>
+        <div class="testimonial-card">
+          <i class="fas fa-quote-right quote-icon"></i>
+          <p>"As a mortgage loan officer, I can say their professionalism and attention to detail make them a joy to work alongside."</p>
+          <div class="testimonial-author">- James K.</div>
+        </div>
+        <div class="testimonial-card">
+          <i class="fas fa-quote-right quote-icon"></i>
+          <p>"They sold our house exactly when we needed, at a price that worked seamlessly for our timeline. Highly recommended!"</p>
+          <div class="testimonial-author">- Emily R.</div>
+        </div>
+        <div class="testimonial-card">
+          <i class="fas fa-quote-right quote-icon"></i>
+          <p>"As first-time buyers, we were overwhelmed, but they guided us through it all. Truly a friendly, family-feel brokerage."</p>
+          <div class="testimonial-author">- Michael &amp; Jessica</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Team -->
+  <section class="team fade-in-section" id="team">
+    <div class="container">
+      <h2 class="section-title">Meet Our Local Experts</h2>
+      <div class="team-grid">
+        <div class="team-card">
+          <div class="team-img-placeholder"><i class="fas fa-user-tie"></i></div>
+          <h4>Delia Davidson</h4>
+          <p>Founder &amp; Broker</p>
+        </div>
+        <div class="team-card">
+          <div class="team-img-placeholder"><i class="fas fa-user"></i></div>
+          <h4>Teri DeSadier</h4>
+          <p>Senior Realtor</p>
+        </div>
+        <div class="team-card">
+          <div class="team-img-placeholder"><i class="fas fa-user"></i></div>
+          <h4>Tom Sinclair</h4>
+          <p>Real Estate Agent</p>
+        </div>
+        <div class="team-card">
+          <div class="team-img-placeholder"><i class="fas fa-user"></i></div>
+          <h4>Elisabeth</h4>
+          <p>Real Estate Agent</p>
+        </div>
+        <div class="team-card">
+          <div class="team-img-placeholder"><i class="fas fa-user"></i></div>
+          <h4>Lucy</h4>
+          <p>Real Estate Agent</p>
+        </div>
+        <div class="team-card">
+          <div class="team-img-placeholder"><i class="fas fa-user"></i></div>
+          <h4>Heather Knight</h4>
+          <p>Real Estate Agent</p>
+        </div>
+        <div class="team-card">
+          <div class="team-img-placeholder"><i class="fas fa-user-friends"></i></div>
+          <h4>Leona &amp; Franck Belhassen</h4>
+          <p>Realtor Team</p>
+        </div>
+      </div>
+      <div style="text-align: center; margin-top: 40px;">
+        <a href="#contact" class="btn btn-outline">Connect With an Agent</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section class="about fade-in-section" id="about">
+    <div class="container">
+      <h2 class="section-title">Rooted in Grand Central</h2>
+      <div class="about-content">
+        <p>Forever Florida Real Estate isn't just a business; it's a piece of the St. Petersburg community. For over 20 years, our local agents have built relationships that last lifetimes.</p>
+        <p>Based in the vibrant Grand Central district, we celebrate the culture that makes St. Pete unique—from showcasing local artists on our office walls to deeply participating in local events like Pride Day. When you walk through our doors, you are family.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section class="contact fade-in-section" id="contact">
+    <div class="container">
+      <h2 class="section-title">Let's Talk About Your Next Move</h2>
+      <div class="contact-container">
+        <form>
+          <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" id="name" class="form-control" required placeholder="Your full name">
+          </div>
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" class="form-control" required placeholder="Your email address">
+          </div>
+          <div class="form-group">
+            <label for="phone">Phone</label>
+            <input type="tel" id="phone" class="form-control" placeholder="Your phone number">
+          </div>
+          <div class="form-group">
+            <label for="intent">I'm looking to:</label>
+            <select id="intent" class="form-control" required>
+              <option value="" disabled selected>Please select...</option>
+              <option value="buy">Buy</option>
+              <option value="sell">Sell</option>
+              <option value="both">Both</option>
+              <option value="unsure">Not sure yet</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="message">Message</label>
+            <textarea id="message" class="form-control" rows="4" placeholder="How can we help you?"></textarea>
+          </div>
+          <button type="submit" class="btn" style="width: 100%;">Send Message</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <h4>Forever Florida Real Estate, Inc.</h4>
+          <p>Treating you like family, every step of the way.</p>
+          <div class="google-badge">
+            4.8 <i class="fas fa-star"></i> on Google
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <p><i class="fas fa-map-marker-alt"></i> Grand Central, St. Petersburg, FL</p>
+          <p><i class="fas fa-phone"></i> (555) 123-4567</p>
+          <p><i class="fas fa-envelope"></i> hello@foreverflorida.com</p>
+        </div>
+        <div class="footer-col">
+          <h4>Follow Us</h4>
+          <div class="social-icons">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="copyright">
+        &copy; 2026 Forever Florida Real Estate, Inc. All rights reserved.
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Mobile interaction
+    const mobileBtn = document.getElementById('mobile-menu-btn');
+    const navLinks = document.getElementById('nav-links');
+
+    mobileBtn.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+    });
+
+    // Close menu on link click
+    navLinks.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        navLinks.classList.remove('active');
+      });
+    });
+
+    // Smooth scroll for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        const targetId = this.getAttribute('href');
+        if (targetId === '#') return;
+        
+        const targetElement = document.querySelector(targetId);
+        if (targetElement) {
+          const headerHeight = document.querySelector('header').offsetHeight;
+          const elementPosition = targetElement.getBoundingClientRect().top;
+          const offsetPosition = elementPosition + window.pageYOffset - headerHeight;
+  
+          window.scrollTo({
+            top: offsetPosition,
+            behavior: "smooth"
+          });
+        }
+      });
+    });
+
+    // Fade in sections on scroll
+    const observerOptions = {
+      root: null,
+      rootMargin: '0px',
+      threshold: 0.1
+    };
+
+    const observer = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, observerOptions);
+
+    document.querySelectorAll('.fade-in-section').forEach(section => {
+      observer.observe(section);
+    });
+  </script>
+</body>
+</html>
